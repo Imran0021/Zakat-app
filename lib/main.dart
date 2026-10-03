@@ -13,7 +13,7 @@ class ZakatApp extends StatelessWidget {
       title: 'Zakat & Currency Calculator',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors:teal,
+        primarySwatch: Colors.teal,
         useMaterial3: true,
       ),
       home: const HomeScreen(),
@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final TextEditingController _usdController = TextEditingController();
   double _pkrAmount = 0;
-  final double _usdToPkrRate = 278.50; // Standard reference rate
+  final double _usdToPkrRate = 278.50;
 
   void _calculateZakat() {
     double cash = double.tryParse(_cashController.text) ?? 0;
@@ -56,7 +56,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
     setState(() {
       _totalAssets = cash + goldValue + silverValue;
-      // Zakat is 2.5% of total wealth
       _zakatAmount = _totalAssets * 0.025;
     });
   }
